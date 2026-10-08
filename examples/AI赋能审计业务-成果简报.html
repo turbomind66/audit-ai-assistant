@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-page-node-id="mdXXExD6pAWuUhSLn3ZFiE">
+<head data-page-node-id="7QPHkwwnQYYySy1RnOGAF7">
+<meta charset="UTF-8" data-page-node-id="Eg56UmW9kQFmtKuseKjuIA">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" data-page-node-id="bVK9D88eYoyEEGW1Ufu5cT">
+<title>AI 赋能审计业务 · 成果简报</title>
+<style>
+  :root {
+    --navy: #16324f;
+    --blue: #2563eb;
+    --blue-light: #eff6ff;
+    --gold: #b45309;
+    --gold-bg: #fffbeb;
+    --green: #15803d;
+    --green-bg: #f0fdf4;
+    --red: #b91c1c;
+    --red-bg: #fef2f2;
+    --amber: #b45309;
+    --amber-bg: #fffbeb;
+    --line: #e2e8f0;
+    --text: #1e293b;
+    --muted: #64748b;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #cbd5e1;
+    font-family: "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+    color: var(--text);
+    display: flex;
+    justify-content: center;
+    padding: 24px 12px;
+  }
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    background: #fff;
+    box-shadow: 0 8px 32px rgba(15, 23, 42, .25);
+    padding: 9mm 10mm 7mm;
+    display: flex;
+    flex-direction: column;
+    gap: 4.2mm;
+  }
+
+  /* ===== 页眉 ===== */
+  header {
+    background: linear-gradient(135deg, var(--navy) 0%, #1d4e79 70%, #2563eb 130%);
+    border-radius: 10px;
+    color: #fff;
+    padding: 14px 20px 13px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .logo {
+    width: 52px; height: 52px; flex: none;
+    background: rgba(255,255,255,.12);
+    border: 1.5px solid rgba(255,255,255,.45);
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .title-wrap { flex: 1; }
+  .title-wrap .org { font-size: 12px; letter-spacing: 3px; opacity: .85; margin-bottom: 3px; }
+  .title-wrap h1 { font-size: 21px; font-weight: 700; letter-spacing: 1px; }
+  .title-wrap .sub { font-size: 11px; opacity: .8; margin-top: 3px; }
+  .meta { text-align: right; font-size: 10.5px; line-height: 1.7; opacity: .9; }
+  .meta b { font-size: 12px; }
+
+  /* ===== 通用小节标题 ===== */
+  .sec-title {
+    display: flex; align-items: center; gap: 8px;
+    font-size: 13.5px; font-weight: 700; color: var(--navy);
+    margin-bottom: 6px;
+  }
+  .sec-title .bar { width: 4px; height: 15px; background: var(--blue); border-radius: 2px; }
+  .sec-title .tag { margin-left: auto; font-size: 10px; font-weight: 400; color: var(--muted); }
+
+  /* ===== 场景卡片 ===== */
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .card {
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 9px 11px 8px;
+    background: #fff;
+    position: relative;
+  }
+  .card::before {
+    content: ""; position: absolute; left: 0; top: 8px; bottom: 8px;
+    width: 3px; border-radius: 2px; background: var(--blue);
+  }
+  .card h3 { font-size: 12.5px; color: var(--navy); display: flex; align-items: center; gap: 6px; margin-bottom: 4px; }
+  .card h3 .ico { font-size: 13px; }
+  .card p { font-size: 10.5px; color: var(--muted); line-height: 1.55; }
+  .card p b { color: var(--text); }
+
+  /* ===== 演示样例 ===== */
+  .demo {
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .demo-head {
+    background: var(--blue-light);
+    padding: 6px 12px;
+    font-size: 11px; font-weight: 700; color: var(--navy);
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .demo-head .time { font-weight: 400; color: var(--muted); font-size: 10px; }
+  .demo-body { display: grid; grid-template-columns: 1fr 34px 1.35fr; }
+  .demo-in {
+    padding: 9px 12px;
+    background: #f8fafc;
+    font-size: 10.5px; line-height: 1.65; color: var(--text);
+  }
+  .demo-in .label { font-size: 9.5px; color: var(--muted); font-weight: 700; letter-spacing: 1px; margin-bottom: 4px; }
+  .demo-in .cmd {
+    background: #fff; border: 1px solid var(--line); border-radius: 6px;
+    padding: 7px 9px; font-size: 10px; line-height: 1.6;
+  }
+  .demo-arrow {
+    display: flex; align-items: center; justify-content: center;
+    color: var(--blue); font-size: 16px; font-weight: 700;
+  }
+  .demo-out { padding: 9px 12px; font-size: 10.5px; }
+  .demo-out .label { font-size: 9.5px; color: var(--green); font-weight: 700; letter-spacing: 1px; margin-bottom: 4px; }
+  .demo-out ul { list-style: none; }
+  .demo-out li { padding-left: 14px; position: relative; line-height: 1.62; margin-bottom: 2px; font-size: 10.2px; }
+  .demo-out li::before { content: "▪"; position: absolute; left: 0; color: var(--blue); }
+  .risk { display: inline-block; font-size: 8.5px; font-weight: 700; border-radius: 3px; padding: 0 4px; margin-right: 4px; vertical-align: 1px; }
+  .risk.r { background: var(--red-bg); color: var(--red); }
+  .risk.a { background: var(--amber-bg); color: var(--amber); }
+  .risk.b { background: var(--blue-light); color: var(--blue); }
+
+  /* ===== 脱敏能力标签 ===== */
+  .mask-cap { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 7px; }
+  .mask-cap span {
+    font-size: 9.5px; color: var(--navy); background: var(--blue-light);
+    border: 1px solid #dbeafe; border-radius: 4px; padding: 3px 9px;
+  }
+
+  /* ===== 提效表 ===== */
+  table.gain { width: 100%; border-collapse: collapse; font-size: 10.5px; }
+  table.gain th {
+    background: var(--navy); color: #fff; font-weight: 600;
+    padding: 5px 8px; text-align: left; font-size: 10.5px;
+  }
+  table.gain td { border-bottom: 1px solid var(--line); padding: 4.5px 8px; color: var(--text); }
+  table.gain tr:nth-child(even) td { background: #f8fafc; }
+  table.gain td.up { color: var(--green); font-weight: 700; }
+  .note { font-size: 9px; color: var(--muted); margin-top: 3px; }
+
+  /* ===== 演示动线 ===== */
+  .flow { display: flex; gap: 8px; align-items: stretch; }
+  .step {
+    flex: 1; border-radius: 8px; padding: 8px 10px;
+    background: var(--green-bg); border: 1px solid #bbf7d0;
+    position: relative;
+  }
+  .step .num {
+    display: inline-flex; width: 16px; height: 16px; border-radius: 50%;
+    background: var(--green); color: #fff; font-size: 10px; font-weight: 700;
+    align-items: center; justify-content: center; margin-right: 5px;
+  }
+  .step h4 { font-size: 11px; color: var(--navy); display: inline; }
+  .step p { font-size: 9.8px; color: var(--muted); margin-top: 4px; line-height: 1.5; }
+  .step .t { position: absolute; top: 7px; right: 9px; font-size: 9px; color: var(--green); font-weight: 700; }
+
+  /* ===== 页脚 ===== */
+  footer {
+    margin-top: auto;
+    border-top: 1px solid var(--line);
+    padding-top: 6px;
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 9px; color: var(--muted);
+  }
+  .next { font-size: 10px; color: var(--text); }
+  .next b { color: var(--navy); }
+
+  @media print {
+    body { background: #fff; padding: 0; }
+    .page { box-shadow: none; width: 210mm; min-height: auto; }
+  }
+</style>
+</head>
+<body data-page-node-id="qWweJRW5Xf55wmXXCo4sg1">
+<div class="page" data-page-node-id="F7cpCDD9b7wNCQ0seopCdJ">
+
+  <!-- 页眉 -->
+  <header data-page-node-id="ywYDxhLGCIRhWeLAeRsEYK">
+    <div class="logo" data-page-node-id="pLan6BMcPALTqQJCAZAjaq">
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" data-page-node-id="01qP5XOZjQu58BFq8keNpO">
+        <path d="M12 2L4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3z" stroke="#fff" stroke-width="1.6" fill="rgba(255,255,255,.15)" data-page-node-id="tQICju5T83i2HzGDAM1tyL"/>
+        <path d="M8.5 11.8l2.4 2.4 4.6-4.8" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" data-page-node-id="qSQmyhKziYVhvteqihcZts"/>
+      </svg>
+    </div>
+    <div class="title-wrap" data-page-node-id="oDSsTv0zhMGQ9pev6xA6gG">
+      <div class="org" data-page-node-id="wQ3t70pbW6ebF2ps9CMeRp">YUTONGGONG · 豫 通 工</div>
+      <h1 data-page-node-id="j8Aohee5MDzslZl3b9RUgo">AI 赋能审计业务 · 应用成果简报</h1>
+      <div class="sub" data-page-node-id="uf0gpOveC7EcGLqhlCady5">智能助手辅助审计作业 —— 底稿梳理 · 程序编制 · 询证函生成 · 数据核对</div>
+    </div>
+    <div class="meta" data-page-node-id="UjaJ5JtEKWFh7xEEURvIud">
+      汇报人：<b data-page-node-id="5a49P1qcRyic1FLkqbsen6">__________</b><br data-page-node-id="VNHpnP3zxYFLs7bPYyoy1y">
+      部门：审计办公室<br data-page-node-id="RiHSe4WTh9odNP7sID6F9J">
+      2026 年 9 月
+    </div>
+  </header>
+
+  <!-- 四大应用场景 -->
+  <section data-page-node-id="O10ivl2jTRe8VFoTa3Gvwj">
+    <div class="sec-title" data-page-node-id="qKzK0A5tYdHHw9wTQYoHnm"><span class="bar" data-page-node-id="beJcdUnE2XMyX5VydoHXCn"></span>一、AI 辅助审计 · 四大应用场景<span class="tag" data-page-node-id="qfXbQSLpSrwWogkY6PHt8j">均已实际使用</span></div>
+    <div class="grid" data-page-node-id="ym7DgHge4d7g8Y37Rkw5F0">
+      <div class="card" data-page-node-id="A4Ja8Spr0Vj16ODW1ItfSi">
+        <h3 data-page-node-id="UdGaXNE5Upmd7psKqJwMpd"><span class="ico" data-page-node-id="d9Tep6FtD54fwZ8utpUIK9">📋</span>审计底稿要点梳理</h3>
+        <p data-page-node-id="nKJCCcbKhqh4gL125GjgcX">输入底稿资料 / 会议纪要，AI 自动提炼<b data-page-node-id="LidPboc0AkpD8hMWnfTmvF">关键事项、风险点、待完善事项</b>，形成结构化要点清单，复核效率显著提升。</p>
+      </div>
+      <div class="card" data-page-node-id="w3dtdgYYMPjNOUNupJxE0Q">
+        <h3 data-page-node-id="bGefATE5QNXCiifA8u2eas"><span class="ico" data-page-node-id="ex5hP8eefQU8rqNnDTUCgJ">🗂️</span>审计程序清单编制</h3>
+        <p data-page-node-id="cK99e10Y9WAJPM78gGqQnq">按审计事项<b data-page-node-id="hDtbaRrq7uYLOvoJgukIiU">一键生成程序清单与步骤建议</b>（如应收账款清理、成本使用审计），与新审计准则要求自动对齐。</p>
+      </div>
+      <div class="card" data-page-node-id="RyYCSxbMZxWhhe7CODbCAc">
+        <h3 data-page-node-id="pYZ0bN53tKxFNNsqoGU0bR"><span class="ico" data-page-node-id="gUDGfSUy35p6Xz6auIS2OA">✉️</span>函证模板快速生成</h3>
+        <p data-page-node-id="er4XHvVgYlcGjBVdu5FWDj">往来款询证函 / 催款函<b data-page-node-id="BpzTYt8IV7l6Gk1gf28YwY">秒级生成、格式统一规范</b>，批量制作不再逐份手改，减少低级差错。</p>
+      </div>
+      <div class="card" data-page-node-id="OcUyR12eTNKLYwbBanBqn3">
+        <h3 data-page-node-id="3hnVtK1KGYsG2fCLTK9yMF"><span class="ico" data-page-node-id="TufnxNkbVlvBdhHcy4Z2nE">🔍</span>数据核对与差异筛查</h3>
+        <p data-page-node-id="PTm7GkSk9IGxuxbvnRGmhA">账龄、材料消耗、成本费用等多源数据<b data-page-node-id="1HXVg1MkTpLS5yuJ4SaIHR">自动比对</b>，快速定位长期挂账、超支异常项，辅助延伸核查方向判断。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 数据安全 · 本地脱敏 -->
+  <section>
+    <div class="sec-title"><span class="bar"></span>数据安全 · 本地脱敏<span class="tag">先脱敏 · 再分析 · 数据不出本机</span></div>
+    <div class="flow">
+      <div class="step"><span class="num">1</span><h4>原始资料</h4><p>底稿 / 台账 / 往来明细，含真实单位、姓名、账号</p></div>
+      <div class="step"><span class="num">2</span><h4>一键脱敏</h4><p>本地批量脱敏，全程不联网、不上传</p></div>
+      <div class="step"><span class="num">3</span><h4>交 AI 分析</h4><p>脱敏文件交给 AI 做梳理、程序清单、询证函</p></div>
+      <div class="step"><span class="num">4</span><h4>映射表保管</h4><p>还原钥匙本地留存，禁止外发</p></div>
+    </div>
+    <div class="mask-cap">
+      <span>单位名 / 人名 → 一致代号</span>
+      <span>身份证 / 账号 / 手机号 → 部分遮盖</span>
+      <span>地址 → 保留到市区</span>
+      <span>金额 → 按比例缩放</span>
+      <span>表头 / 结构 → 零误伤</span>
+    </div>
+  </section>
+
+  <!-- 真实演示样例 -->
+  <section data-page-node-id="aLFuKjgy7ZyUFiRyJSMNsQ">
+    <div class="sec-title" data-page-node-id="HyM1kLTzCo32BwfpkCOIGi"><span class="bar" data-page-node-id="Y8ms3tJoNqaLcGOBVKywtC"></span>二、演示样例：离任审计 · 应收账款清理要点梳理<span class="tag" data-page-node-id="jqpmedDfbz0DrIapIWpIXr">样例数据已脱敏</span></div>
+    <div class="demo" data-page-node-id="kUSDWN02kD3soo6BHgANY1">
+      <div class="demo-head" data-page-node-id="fgk8DmFNCrehZKj1h7GnDn">现场演示实录 <span class="time" data-page-node-id="dxnm6keCgtaQMV0i1q7TjG">⏱ AI 用时约 30 秒</span></div>
+      <div class="demo-body" data-page-node-id="a4FLsLe9Sys0FJJ3EAilYO">
+        <div class="demo-in" data-page-node-id="Fcf6na0hgwSrRA3HdTjXCN">
+          <div class="label" data-page-node-id="DOqsSwxkaRjxJ4CJJJIMI6">输入（审计人员指令）</div>
+          <div class="cmd" data-page-node-id="PCGtReNIKKME5IUZyOCuOs">"某生产单位离任审计，应收账款清理情况：期末账龄 1 年以上 8 户，其中 3 年以上长期挂账 2 户未清理；部分客户仅有口头对账、未取得书面确认；坏账准备计提与账龄政策不匹配。请梳理审计关注要点。"</div>
+        </div>
+        <div class="demo-arrow" data-page-node-id="OZYP4N2I8rEwL5bmrUSwAO">➜</div>
+        <div class="demo-out" data-page-node-id="9P7B2wOHH4xdADNeG47vBa">
+          <div class="label" data-page-node-id="n2XkH1xg1wGRHuRhnEDvRr">AI 输出（结构化要点）</div>
+          <ul data-page-node-id="QmgGeYRfvHwRCB4bJB1t5g">
+            <li data-page-node-id="B8QEM1QXSK3UAHCrUD5ET8"><span class="risk r" data-page-node-id="sACO7htd6q0ArQiElPzs4e">高风险</span>2 户 3 年以上长期挂账未清理 → 涉及<b data-page-node-id="bIAwIKQdCRCYTJ0Fbyb3Bv">清收责任界定</b>，离任审计重点关注事项</li>
+            <li data-page-node-id="DfFQWC3z0wccv9Pd3ZSIUT"><span class="risk r" data-page-node-id="6XunbqEvLTDNMRm7CCzI3y">高风险</span>部分债权仅有口头对账、无书面确认 → 发<b data-page-node-id="1IL98RyYbeKVBZ40z6qhR8">往来款询证函</b>核实债权真实性</li>
+            <li data-page-node-id="y8DT0MPxhOgQM1WpOCZfgp"><span class="risk a" data-page-node-id="ZCqFGQe7NKZ9iKMQVATLae">完善项</span>坏账准备计提与账龄政策不匹配 → 按政策重新测算、补提差额</li>
+            <li data-page-node-id="oYzSwSZff3D4HBAXzKF7XO"><span class="risk b" data-page-node-id="OuDkJwVSKnEcjn8mCxXpZo">建议程序</span>编制账龄分析表；核查催收记录与清收责任落实情况</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 提效对比 -->
+  <section data-page-node-id="XjNp7SVr8vVXk0JIsXy9bx">
+    <div class="sec-title" data-page-node-id="HR8K28UQbmMItH1pTre7ok"><span class="bar" data-page-node-id="G1bOF6tQ2tkx4ue1Ie7j4u"></span>三、作业效率对比（估算）</div>
+    <table class="gain" data-page-node-id="sxDINWPFP8FbmdhQnDzgDi">
+      <tr data-page-node-id="4sS8xfBWJlVQWM8D7XgFFl"><th data-page-node-id="J5ZSvYkr3O6GhjfhXeMgfs">作业环节</th><th data-page-node-id="zBJS7Y4jmpNl7dMNZQQWCD">传统人工方式</th><th data-page-node-id="9XufEEFWcHeJOEkikGVXqt">AI 辅助后</th><th data-page-node-id="TvYBQyERFRQxBV3yCutezw">提效幅度</th></tr>
+      <tr data-page-node-id="MW8djYpB8lK0mgKosTT7R4"><td data-page-node-id="njt5Y48VAEuE38ERya2RWN">底稿要点梳理</td><td data-page-node-id="Me3H6SfpG64jZBB5CFILkB">约 2 ~ 3 小时 / 份</td><td data-page-node-id="MNCMsbtugYCQuX6wXGdUcW">约 15 分钟（AI 初筛 + 人工复核）</td><td class="up" data-page-node-id="dvQ5E2O0aTaiwc9YklUaoc">↑ 约 85%</td></tr>
+      <tr data-page-node-id="SS0OcSiizDlJbnFelGVOL8"><td data-page-node-id="b4fS155L7kBIz1Pm61PHGL">审计程序清单编制</td><td data-page-node-id="Z4xcCuk6B6nwFBLftFRZ9q">约 1 ~ 2 小时 / 项</td><td data-page-node-id="3cFucwOORYXRnnwNOOk3Wr">约 10 分钟</td><td class="up" data-page-node-id="PBF6XLjhucelPNm3iDufGA">↑ 约 90%</td></tr>
+      <tr data-page-node-id="xUZR1lkRiTQkqfYcnfXPgL"><td data-page-node-id="PFusti1USjtRFSQsMJOGcu">往来款询证函制作</td><td data-page-node-id="Tcql7djm2KmjP4HZp59Fzt">约 30 分钟 / 份</td><td data-page-node-id="iLNKRRdGHcXl3AmjW8YMBN">约 2 分钟 / 份</td><td class="up" data-page-node-id="sW0g2QzJSn9wMhgFv2F5zT">↑ 约 93%</td></tr>
+      <tr data-page-node-id="el5LonbldsnwFvsBc8CjXV"><td data-page-node-id="p1rq9sRIpsm16t1nDyug22">账龄 / 成本数据筛查</td><td data-page-node-id="JCpt7KRUSCKtayAWk7pwHu">约 2 小时 / 批</td><td data-page-node-id="SPXJFDDlKXTxAj1UHF8Esc">约 10 分钟 / 批</td><td class="up" data-page-node-id="FWpvfSPxgoVAcyS7lYfmDC">↑ 约 92%</td></tr>
+    </table>
+    <div class="note" data-page-node-id="JqUui1c4eFOrdOL76AzImq">※ 以上为单次作业估算值，供演示参考；AI 输出均经审计人员复核确认后使用，AI 定位为"辅助"，不替代职业判断。</div>
+  </section>
+
+  <!-- 现场演示动线 -->
+  <section data-page-node-id="G1qtMQVYBo0qDWgaNatTyc">
+    <div class="sec-title" data-page-node-id="Rn07EvOQtAg4U7VXl7TDkY"><span class="bar" data-page-node-id="be3hjJ9UFFLaq4t7JLLLYC"></span>四、现场演示安排（约 2 分钟）</div>
+    <div class="flow" data-page-node-id="cpx3V9dOEsnubs0YSieB9Q">
+      <div class="step" data-page-node-id="xxGU0FdoTU6nR3qPdz8DzS"><span class="t" data-page-node-id="WGRsTNWVhPNGjAm4jrDHbE">约 30 秒</span><span class="num" data-page-node-id="kBhs7Yda9vLxivTsaEFkC9">1</span><h4 data-page-node-id="3mgxTb9aksManoAPjWz1PI">底稿要点梳理</h4><p data-page-node-id="TWOswZxQJpQzVI0rabHFnt">现场输入应收账款清理底稿摘要，实时输出风险要点清单</p></div>
+      <div class="step" data-page-node-id="eG5hF4zioZlt37bGhuw87C"><span class="t" data-page-node-id="miYjlAZ9dtqlz69sCkbmik">约 40 秒</span><span class="num" data-page-node-id="CwjvAXsG7Ag6CTSONUX11h">2</span><h4 data-page-node-id="jQZ7EicI1Z3ePx4vy4MCvm">程序清单生成</h4><p data-page-node-id="ifxzUEgZnuIpLhR7adHMs9">指定"应收账款清理 / 成本使用"审计事项，一键生成程序步骤表</p></div>
+      <div class="step" data-page-node-id="SYHBtSImh8rj77010VaCSV"><span class="t" data-page-node-id="KsZKkBLvt2tu9RZ6k9IhXR">约 30 秒</span><span class="num" data-page-node-id="EpnTGGINVmtPnpS8cUOTJ7">3</span><h4 data-page-node-id="SjoD5qSXzROdQbkXlhoSJ9">询证函输出</h4><p data-page-node-id="SX5gnl8MCrXMEFALHAprG6">口述要素，直接产出规范往来款询证函文本</p></div>
+    </div>
+  </section>
+
+  <!-- 页脚 -->
+  <footer data-page-node-id="rTmSdRtCE06jQCiFeC6slh">
+    <div class="next" data-page-node-id="acO1Av3LidTAgNlFD9o697"><b data-page-node-id="QDvspdHj2BVxnJ7uD1i33t">下一步计划：</b>底稿复核辅助 → 审计报告初稿生成 → 数据分析看板化</div>
+    <div data-page-node-id="DS1HD6lHzPrchJapBolOWr">本简报所有数据均为脱敏演示样例 · 2026-09</div>
+  </footer>
+
+</div>
+</body>
+</html>
