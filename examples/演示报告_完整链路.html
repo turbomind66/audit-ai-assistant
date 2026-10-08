@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-page-node-id="HwnyKujXayfdb4vbeOmbgf">
+<head data-page-node-id="H12xeAQGpqpUErcPpii8rW">
+<meta charset="UTF-8" data-page-node-id="yE7FDxTbv9ADZcYKfyT2A2">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" data-page-node-id="cRKcCDkM4obfwpGoA8mPVA">
+<title>审计AI助手 · 完整链路演示报告</title>
+<style>
+  :root{
+    --bg:#f6f7f9; --card:#ffffff; --ink:#1f2329; --sub:#646a73; --line:#e5e6eb;
+    --blue:#245bdb; --blue-light:#eef3ff; --red:#d83931; --red-bg:#fdeceb;
+    --amber:#b76e00; --amber-bg:#fff4e0; --green:#1f9d55; --green-bg:#e8f7ee;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:"Microsoft YaHei","PingFang SC",-apple-system,sans-serif;line-height:1.7;padding:32px 16px}
+  .wrap{max-width:860px;margin:0 auto}
+  .head{background:linear-gradient(135deg,#245bdb,#4a7df0);color:#fff;border-radius:14px;padding:28px 30px;margin-bottom:22px}
+  .head h1{font-size:22px;font-weight:700;margin-bottom:6px}
+  .head .sub{font-size:13px;opacity:.92}
+  .step{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:24px 26px;margin-bottom:18px}
+  .step-title{display:flex;align-items:center;gap:10px;font-size:17px;font-weight:700;margin-bottom:14px}
+  .step-num{width:26px;height:26px;border-radius:8px;background:var(--blue);color:#fff;font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  h3{font-size:14px;font-weight:700;margin:16px 0 8px;color:var(--ink)}
+  table{width:100%;border-collapse:collapse;font-size:13px;margin:8px 0 4px}
+  th,td{border:1px solid var(--line);padding:8px 10px;text-align:left}
+  th{background:#f2f4f7;font-weight:700}
+  td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+  .risk{display:inline-block;padding:2px 8px;border-radius:6px;font-size:12px;font-weight:700}
+  .risk.r{background:var(--red-bg);color:var(--red)}
+  .risk.a{background:var(--amber-bg);color:var(--amber)}
+  .risk.b{background:var(--blue-light);color:var(--blue)}
+  ul{padding-left:20px;font-size:13.5px}
+  li{margin:5px 0}
+  .quote{background:#fafbfc;border-left:3px solid var(--blue);padding:14px 16px;border-radius:0 8px 8px 0;font-size:13.5px;margin:10px 0}
+  .quote .lbl{font-weight:700;color:var(--blue)}
+  .note{font-size:12px;color:var(--sub);margin-top:12px}
+  .foot{font-size:12px;color:var(--sub);text-align:center;margin-top:8px}
+  .mask{background:var(--green-bg);color:var(--green);padding:1px 5px;border-radius:4px;font-weight:700}
+  .tag{display:inline-block;background:#f2f4f7;color:var(--sub);padding:2px 8px;border-radius:6px;font-size:12px;margin:2px 4px 2px 0}
+</style>
+</head>
+<body data-page-node-id="uu0dHFlyjRK7P1rXgauucB">
+<div class="wrap" data-page-node-id="fXovsDFVJ3bZGTiyzLhFPA">
+
+  <div class="head" data-page-node-id="XwfKYiHXHUFV4Rbxg25afb">
+    <h1 data-page-node-id="dtWm7agfV4sHb2xzvOI9yt">审计AI助手 · 完整链路演示报告</h1>
+    <div class="sub" data-page-node-id="BhSLBbGMFT9dIoI2ChvIEx">测试数据（虚构） · 应收账款清理专项 · 脱敏 → 底稿梳理 → 程序清单 → 询证函</div>
+  </div>
+
+  <!-- 环节一：脱敏 -->
+  <div class="step" data-page-node-id="5gvAAXHLfgnsEBjVGMXI6o">
+    <div class="step-title" data-page-node-id="aopChmmG5fGC6v2sr8Fj8V"><span class="step-num" data-page-node-id="OKJPOy7lCpYfxo5tOsQVR2">1</span>数据安全 · 本地脱敏</div>
+    <p style="font-size:13.5px" data-page-node-id="0AoFvqgtXorUGv8GZdoWTr">输入 <b data-page-node-id="nFLcf4WRfDzO0ly3HA0l5C">测试数据\</b>（1 份 Excel + 1 份纪要 txt），本地运行，全程不联网、不上传。</p>
+    <table data-page-node-id="w4Fr8op0ftAYUwY2HYzN9X">
+      <tr data-page-node-id="b8B0CaQorNvIQJgml5DxJt"><th data-page-node-id="ZvOLA7kiAGSHQ1Anp3R2ta">脱敏项</th><th class="num" data-page-node-id="UFbjSYPvY5uCnJ3MwgRKHA">命中数</th><th data-page-node-id="EZEVArc5KEHyNMhoJdI1SL">示例（脱敏前 → 脱敏后）</th></tr>
+      <tr data-page-node-id="nqOqgqt0wB2tzAZKW3hZ4b"><td data-page-node-id="YQubxStTN0OQ7zB77Pyrht">单位名称</td><td class="num" data-page-node-id="jflmJne2rtkyf6DZcr0XuK">9</td><td data-page-node-id="aroXqleD4IlL2F9gfucjI1">示例单位甲（虚构） → <span class="mask" data-page-node-id="dp7fCMyKotbHLYT2oAJdrt">单位002</span></td></tr>
+      <tr data-page-node-id="KhXQa1oR3bxBhSwJt73aiy"><td data-page-node-id="VP09H5YaHsXKuv5Pccbfsq">人员姓名</td><td class="num" data-page-node-id="SHAECSCBcAWiNi5U5L9dVU">8</td><td data-page-node-id="pTKFVHlnN6NPAd6saxL5FY">人员001 → <span class="mask" data-page-node-id="QmDmzuFO5pO1TwsdgWMRhb">人员001</span></td></tr>
+      <tr data-page-node-id="IUFOb2sCC960vqODi6LMTl"><td data-page-node-id="iz3rBvs2jBWxgLG1o45FST">手机号</td><td class="num" data-page-node-id="litWlv3eFN6EdRjuMLnFbS">9</td><td data-page-node-id="gBIJvB1MxVribEtQRCs7Zi">138****0000 → <span class="mask" data-page-node-id="rOlQzsrvkc3jRh8OHSJ9qO">138****5678</span></td></tr>
+      <tr data-page-node-id="2DDChIGjUWK78DQap4z1bx"><td data-page-node-id="wIflMCCNaLNPDEERHRW46o">银行账号</td><td class="num" data-page-node-id="IDveCM1v9PS2cKPVcCOrSJ">8</td><td data-page-node-id="E96CiAToc8seHuetGqd8lm">（示例）银行账号-00013 → <span class="mask" data-page-node-id="E6co0P7w8v8MN2afoWs39X">6222***********0123</span></td></tr>
+      <tr data-page-node-id="DssACYZ1jgmwzT3wldBzTk"><td data-page-node-id="NHTolT3xnfUZz5OBHbxkM0">单位地址</td><td class="num" data-page-node-id="idjaFx1oeW9udIKTAKm674">8</td><td data-page-node-id="BJIB9xfP98Oefe8KBbMANU">河南省新乡市红旗区平原路366号 → <span class="mask" data-page-node-id="gjzMejYzfG6vAqotRodFd2">河南省新乡市****</span></td></tr>
+      <tr data-page-node-id="rc0MupnaMCBe5kt1ETvsgq"><td data-page-node-id="bT2Gvf1xMBXoEdiI3VBznC">身份证号</td><td class="num" data-page-node-id="AHjBiXfgmRT6csv6sa59Lt">1</td><td data-page-node-id="g1XEaY7XA1Rj7DAGhG4ipY">（示例）ID-0001 → <span class="mask" data-page-node-id="f97CzRcpwJkJWrNSgEBPof">410702********4567</span></td></tr>
+      <tr data-page-node-id="pXMuAZZZuOJ5OtjGwzAETz"><td data-page-node-id="mvCfe9PPvshEu4n7uj0DzE">金额缩放</td><td class="num" data-page-node-id="rEfRIDzQyW1Wd3xlP62eyt">8</td><td data-page-node-id="cxmGgRG7IoAeGBjtHVCEwd">1,250,000 元 → <span class="mask" data-page-node-id="oadPLdt7v1kigMzPPC7znW">1,087,500 元</span>（×0.87）</td></tr>
+    </table>
+    <p class="note" data-page-node-id="oFHy9TeHshcCfCdpazFB5R">产物：<b data-page-node-id="JcAgTcbIQXC1elJGx4Ie8X">测试数据_脱敏\</b>（可安全交给 AI）+ 映射表（还原钥匙，本地留存禁止外传）+ 脱敏报告。表头零误伤、财务词零误判。</p>
+  </div>
+
+  <!-- 环节二：底稿梳理 -->
+  <div class="step" data-page-node-id="ZoAnqco6Oo1OEUKbqF6wQw">
+    <div class="step-title" data-page-node-id="MT8hDWXeyHuPP4rWUXxpnc"><span class="step-num" data-page-node-id="8mWVJH8l4CmbV6iCKH6JnH">2</span>审计底稿要点梳理</div>
+    <p style="font-size:13.5px" data-page-node-id="4KdMD4RApX9IW3hgrHq0xG">📋 审计关注要点（应收账款清理专项 · 8 户往来单位）</p>
+
+    <h3 data-page-node-id="ExgH0PEpd8h3elg250n67Q"><span class="risk r" data-page-node-id="RuS8d9kssz44KrvUd6abl6">🔴 高风险事项</span></h3>
+    <ul data-page-node-id="K6QKP2o4m3Fm6yhQ0BP6j6">
+      <li data-page-node-id="HzRFwwMSpIj5AAi0URekaU"><b data-page-node-id="MWGWG2A44pPClggGObt6RJ">单位009</b>（3年以上，33.5万）对方已注销、核销待批 → 债权实质灭失，形成坏账损失 → 建议：启动坏账核销审批程序，完善注销证明与债权证据链</li>
+      <li data-page-node-id="XMJjqrwDsOreHVAN2EXEC3"><b data-page-node-id="2bRc9RnRuks5ZDLV9KjyV8">单位008</b>（1年以上，13.2万）已提起诉讼 → 存在执行风险 → 建议：跟踪诉讼/执行进展，评估可回收金额并计提减值</li>
+      <li data-page-node-id="PYPtcaeGz0FJf6l7cO9DgH"><b data-page-node-id="4KTruxeQGVcBSvADxAHzP6">单位007</b>（2-3年，58.7万）金额有争议待核实 → 债权金额不确定 → 建议：函证 + 对账，核实差异金额</li>
+      <li data-page-node-id="syCegp40ul08wKNAGI8aoJ"><b data-page-node-id="uLFQUiTku41XNeFqFNUtZo">单位003</b>（3年以上，74.8万）长期挂账未清理 → 账龄过长、回收难度大 → 建议：逐笔核查挂账成因与催收记录</li>
+    </ul>
+
+    <h3 data-page-node-id="ydVsCTNDPIAsMyDWvbSW9x"><span class="risk a" data-page-node-id="GyLsSi1N4r6YmAOmZtbS3e">🟡 底稿完善事项</span></h3>
+    <ul data-page-node-id="4ZPLYm43uPmA3F8P3zsIHb">
+      <li data-page-node-id="KDSsnQoJhW9Me5UI0LyAiG">单位002「口头对账未确认」→ 补充书面对账确认或函证回函</li>
+      <li data-page-node-id="sEH0gSwClupb8OcDXzl0bs">单位004「已发函证未回」→ 补充二次函证或替代程序（抽查期后回款、合同/出库单）</li>
+      <li data-page-node-id="ZQDrpA1oBe7M4BGc9eK4HT">坏账准备计提与账龄政策不匹配 → 补充账龄划分与计提比例测算依据</li>
+    </ul>
+
+    <h3 data-page-node-id="7HPB3HzoPzAKbuVEXGUsVD"><span class="risk b" data-page-node-id="KTDBNOyhlcm4YuhaUpAWnG">🔵 建议审计程序</span></h3>
+    <ul data-page-node-id="vGr7pZA0QAITehjdUEtTiB">
+      <li data-page-node-id="FrEHOOlB1FBkunJZYYNute">函证程序（往来款询证函）；账龄分析表编制；期后回款检查；催收记录与清收责任落实核查；坏账准备重新测算</li>
+    </ul>
+  </div>
+
+  <!-- 环节三：程序清单 -->
+  <div class="step" data-page-node-id="OlXmdT70Z7Xf2QCxDmDYEf">
+    <div class="step-title" data-page-node-id="NO2tUjc1OwGcWHAOM7QIzN"><span class="step-num" data-page-node-id="0J3h7FSOSt1pK4aFGYLG2L">3</span>审计程序清单</div>
+    <p style="font-size:13.5px" data-page-node-id="VtM4UVMqsnPNSzfvvaJNeO">应收账款清理专项审计 · 程序清单</p>
+    <table data-page-node-id="TVkYI1bHUgwzzCdBI27eTm">
+      <tr data-page-node-id="aKwxrVazfoUjvE0TIZMmQj"><th style="width:40px" data-page-node-id="Ec8YrmViTaeJrvGd1dDVW7">序号</th><th data-page-node-id="PTYoBGIK2NUhIrmhxtj0w1">审计程序</th><th data-page-node-id="mZHivIRGESZ05kNKyWKluK">执行方式</th><th data-page-node-id="CKBUFmiCytnrtgarpywb0a">关注要点</th></tr>
+      <tr data-page-node-id="qyFwckYsMgcOYtNlRRqRgs"><td class="num" data-page-node-id="gdmquJf9QwvNGMKfDhjovX">1</td><td data-page-node-id="SOMhKqJW5qUqrAs8A4vmOk">取得并核对应收账款明细账</td><td data-page-node-id="zdMScDOiCRazyYsdDtsZK6">调取明细账与总账核对</td><td data-page-node-id="GkkGlPQwbw5UBoqh9cQghq">余额一致性与完整性</td></tr>
+      <tr data-page-node-id="PGf7rYdghlRzcmc6NWeOMt"><td class="num" data-page-node-id="wJ5lh4xbNuzDXADNUVSeYC">2</td><td data-page-node-id="mOnvs6RIuMzQ79FZoAftS9">编制账龄分析表</td><td data-page-node-id="1Ht6Nb61DC4N86SMwFjIDW">按账龄区间归集</td><td data-page-node-id="a5Y6N7rB485jgmf05RmySe">3年以上挂账户、坏账迹象</td></tr>
+      <tr data-page-node-id="QDiF4RwicViCYfX7DF7dpu"><td class="num" data-page-node-id="2q5ZWckOhnsOExfa59ff6T">3</td><td data-page-node-id="eQaJ4H53REuqow6aLT0s7U">函证往来款项</td><td data-page-node-id="KoWiCE03tRNTvczPGCcNoz">发询证函、跟踪回函</td><td data-page-node-id="QswEAXW009QIf6aH8Cu3Ff">未回函户需替代程序</td></tr>
+      <tr data-page-node-id="KNpL4AkJQaeIkYHUQya4yo"><td class="num" data-page-node-id="RuEJkDEo8eU1IaD4rvOHEm">4</td><td data-page-node-id="hH3eFGk0sekLYcNYf0xC8Z">核查催收记录与清收责任</td><td data-page-node-id="vpB1PCBKOubXoD4S0cD6re">调阅催收台账、访谈</td><td data-page-node-id="TB4MEULndWCWBcaun8Goij">长期挂账是否落实清收</td></tr>
+      <tr data-page-node-id="7Ba49qA4gQUyvPEx8TIHzN"><td class="num" data-page-node-id="33j5ljTQBrCCOngg0zzsCm">5</td><td data-page-node-id="DB9qPTWHh6BiWUeRFo6KTB">检查坏账准备计提</td><td data-page-node-id="hZV2RxVmq634zERWIaNEFR">复算计提比例与金额</td><td data-page-node-id="WDascXjU7qnxLAHyzuA7fL">账龄政策是否匹配</td></tr>
+      <tr data-page-node-id="6QNOKVZMeK82RrpBgMPs3t"><td class="num" data-page-node-id="hLgFs0ze3uBAcdZWgXdXjE">6</td><td data-page-node-id="lWOxHaLHUggwAzT86WJCUP">核查期后回款</td><td data-page-node-id="534o9PIaIEwGaFE6YioP58">抽查期后收款凭证</td><td data-page-node-id="4ysU3crKZS634O4pBvpQKd">确认债权真实性</td></tr>
+      <tr data-page-node-id="yfcxvbItMzk6W2KtVMfV8S"><td class="num" data-page-node-id="fK8230Lthtdk67zUJGFaDi">7</td><td data-page-node-id="yqigvVK2lqNrSgZGZiDNBW">核查涉诉/已注销单位</td><td data-page-node-id="oxa2hzLYaVKzgy4Yc0FUHw">调阅诉讼文书、工商信息</td><td data-page-node-id="dI2VvQ9ozNv7pocXRYjPVx">可回收性评估、核销依据</td></tr>
+    </table>
+  </div>
+
+  <!-- 环节四：询证函 -->
+  <div class="step" data-page-node-id="r0NodaykwEx21KYYVfQpn8">
+    <div class="step-title" data-page-node-id="2Z5xq1s6hexoGjFmYGPLyA"><span class="step-num" data-page-node-id="hWwG63VpiVottIL2Ua5LLD">4</span>往来款询证函</div>
+    <div class="quote" data-page-node-id="CZI3CEzjV5En5ceHd7UcaA">
+      <div class="lbl" data-page-node-id="BC6T4uk9JEQHGxH8RaLKCq">企业询证函</div>
+      <p style="margin-top:8px" data-page-node-id="gwrBvdRxha1y8fsQFQMrQ6">致：<b data-page-node-id="ZUxQoBs2A7H5PXhsg9jL8G">单位007</b>（应收账款清理专项审计 · 测试样例）</p>
+      <p style="margin-top:6px" data-page-node-id="dCHNepAugZC7No5pVGCVFz">本公司正接受审计办公室审计，现对本公司与贵单位往来款项进行函证。下列金额为本公司账簿记录，如与贵单位记录相符，请在本函下端「数据相符」处签章确认；如有不符，请在「数据不符」处列明差异金额。</p>
+      <table style="margin-top:10px" data-page-node-id="B5eGIrT8vLcYOiDGaYwSEW">
+        <tr data-page-node-id="7kV0q2hjAqV8iHmovnXEHC"><th data-page-node-id="FmI4hhGCTGrlYm5xGVGLWq">截止日期</th><th data-page-node-id="6dh2Wf6LML4DTDPfHvegqd">贵单位欠（款）项余额</th><th data-page-node-id="cRyPNg5GuvfPrW30s0JKZi">备注</th></tr>
+        <tr data-page-node-id="IWmtElqHCdeFaoCBdp1SS2"><td data-page-node-id="K4wrwKfP4lDT6VeGydwqn8">2025-12-31</td><td class="num" data-page-node-id="Wsv9U4L1xP81U3t4C7SrWf">587,250.00 元</td><td data-page-node-id="tKfuXsLQt15V2PPcIn88Kb">应收（我方账面）</td></tr>
+      </table>
+      <p style="margin-top:10px" data-page-node-id="ZHEYx6JCfXDQwj9yCHYdDy">（一）数据相符：<u data-page-node-id="DLLHIFw5r51APsZ44FY1Bn">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>（签章）</p>
+      <p data-page-node-id="kIqDicZ5QGTXBc8aHLApBS">（二）数据不符，差异金额：<u data-page-node-id="FXX5W9CQeO7DCuAqzJJCMV">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>元，差异说明：<u data-page-node-id="NlC8Ie8F7ICKaVVUoB9EWq">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u></p>
+      <p style="margin-top:8px" data-page-node-id="YDLkRVLbma1llaJSV2QGu5">回函请寄：审计办公室（经办人：人员006 · 联系电话 134****5555）</p>
+      <p style="margin-top:4px;color:var(--sub)" data-page-node-id="hJnucGuXhZqGAXDrngZDIb">※ 本函为测试样例，致函单位与金额均使用脱敏代号，仅供演示。</p>
+    </div>
+    <p class="note" data-page-node-id="PySZGcQQJZJVjUIYylrHHL">要素齐全：被询证单位（单位007）、截止日（2025-12-31）、款项余额（587,250 元）、经办人（人员006）——均取自脱敏后数据，无编造。</p>
+  </div>
+
+  <p class="foot" data-page-node-id="zXm4qYnOtSg7c2xSJXJzgV">※ 以上内容供参考，需经审计人员复核确认后使用 · 全部基于脱敏数据生成 · 2026-09-07</p>
+
+</div>
+</body>
+</html>
