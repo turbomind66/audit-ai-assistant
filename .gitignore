@@ -1,0 +1,28 @@
+# 脱敏产物（含还原映射表，本地保管、禁止外发）
+_脱敏/
+*_脱敏/
+*脱敏映射表*
+_脱敏报告*
+
+# 离线运行时（以 GitHub Release 形式分发，勿入仓库）
+python_runtime/
+wheels/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# 密钥 / 环境变量
+.env
+*.env
+config.json
+auths/
+credentials*
+
+# 系统文件
+.DS_Store
+Thumbs.db
+desktop.ini
